@@ -1,4 +1,4 @@
-package pratice.code;
+package pratice.code.level1;
 
 
 import static java.lang.Math.*;
