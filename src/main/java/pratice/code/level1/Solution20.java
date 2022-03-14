@@ -11,7 +11,7 @@ public class Solution20 {
 
     }
 
-    // [1차] 비밀지도 비트연산자!!!!! 
+    // [1차] 비밀지도 비트연산자!!!!!
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String[n];
 
