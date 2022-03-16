@@ -1,6 +1,10 @@
 package pratice.code.level1;
 
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
 
 public class Solution23 {
     public static void main(String[] args) {
@@ -21,13 +25,24 @@ public class Solution23 {
     // 크레인 인형뽑기 게임
     public int solution(int[][] board, int[] moves) {
         int answer = 0;
-        ArrayList<Integer[]> list = new ArrayList<>();
-        
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
+        Stack<Integer> stack = new Stack<>();
 
+        for (int i = 0; i < moves.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[j][moves[i]-1] != 0) {
+
+                    if (!stack.isEmpty() && board[j][moves[i] - 1] == stack.peek()) {
+                        answer += 2;
+                        stack.pop();
+                    }else {
+                        stack.add(board[j][moves[i] - 1]);
+                    }
+                    board[j][moves[i]-1] = 0;
+                   break;
+                }
             }
         }
+
         return answer;
     }
 
