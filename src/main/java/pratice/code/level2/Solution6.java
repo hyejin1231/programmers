@@ -22,8 +22,6 @@ public class Solution6 {
                 break;
             }
         }
-
-
         return answer;
     }
 
