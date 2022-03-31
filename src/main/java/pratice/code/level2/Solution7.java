@@ -10,29 +10,32 @@ public class Solution7 {
         System.out.println(solution7.solution(4)); // result 11
         System.out.println(solution7.solution(5)); // result 12
         System.out.println(solution7.solution(6)); // result 14
+        System.out.println(solution7.solution(7)); // result 21
+        System.out.println(solution7.solution(8)); // result 22
+        System.out.println(solution7.solution(9)); // result 24
         System.out.println(solution7.solution(10)); // result 41
     }
 
     // 124 나라의 숫자
     public String solution(int n) {
-        StringBuilder sb = new StringBuilder();
+        String[] list = {"4", "1", "2"};
+        String answer = "";
 
-        if (n / 4 != 0) {
-            sb.append ( n / 4);
-        }
-        switch (n % 3) {
-            case 1:
-                sb.append( 1);
-                break;
-            case 2:
-              sb.append( 2);
-                break;
-            case 0:
-                sb.append( 4);
-                break;
+        int num = n;
+
+        while (num > 0) {
+            int a = num %3;
+            num /= 3;
+
+            if (a == 0) {
+                num--;
+            }
+
+            answer = list[a] +  answer;
         }
 
-        return sb.toString();
+
+        return answer;
     }
 
 }
