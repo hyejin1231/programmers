@@ -16,7 +16,7 @@ public class Solution7 {
         System.out.println(solution7.solution(10)); // result 41
     }
 
-    // 124 나라의 숫자    
+    // 124 나라의 숫자
     public String solution(int n) {
         String[] list = {"4", "1", "2"};
         String answer = "";
