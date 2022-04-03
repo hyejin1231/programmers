@@ -10,22 +10,26 @@ public class Solution9 {
 
     // 스킬트리
     public int solution(String skill, String[] skill_trees) {
-        int answer = 4;
-        char[] ch = new char[skill.length()];
-        for (int i = 0; i < ch.length; i++) {
-            ch[i] = skill.charAt(i);
-        }
+        int answer = 0;
 
         for (String skill_tree : skill_trees) {
-            for (int i = 0; i < ch.length; i++) {
-                System.out.print(skill_tree.indexOf(ch[i])  + " ");
+            String temp = skill_tree;
+
+            for (int i = 0; i < skill_tree.length(); i++) {
+                String substring = skill_tree.substring(i, i + 1);
+                if (!skill.contains(substring)) {
+                     temp= temp.replace(substring, "");
+                }
             }
-            System.out.println();
+
+            if (skill.indexOf(temp) == 0) {
+                answer ++;
+            }
         }
 
         return answer;
     }
-// System.out.println(skill_tree.indexOf(ch[i]) );
+
 
 
 
