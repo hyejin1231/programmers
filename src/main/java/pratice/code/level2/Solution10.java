@@ -14,7 +14,7 @@ public class Solution10 {
     }
 
 
-    // 큰 수 만들기
+    // 큰 수 만들기      
     public String solution(String number, int k) {
         StringBuilder sb = new StringBuilder();
         int scope = number.length() - k;
