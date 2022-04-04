@@ -13,7 +13,7 @@ public class Solution10 {
     }
 
 
-    // 큰 수 만들기
+    // 큰 수 만들기      
     public String solution(String number, int k) {
         String answer = "";
         StringBuilder sb = new StringBuilder();
