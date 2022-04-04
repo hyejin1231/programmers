@@ -3,6 +3,7 @@ package pratice.code.level2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Solution10 {
     public static void main(String[] args) {
@@ -15,47 +16,25 @@ public class Solution10 {
 
     // 큰 수 만들기
     public String solution(String number, int k) {
-        String answer = "";
         StringBuilder sb = new StringBuilder();
         int scope = number.length() - k;
 
-        int[] num = new int[number.length()];
-
-        for (int i = 0; i < num.length; i++) {
-            num[i] = Integer.parseInt(String.valueOf(number.charAt(i)));
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < number.length(); i++) {
+            stack.add(Integer.valueOf(String.valueOf(number.charAt(i))));
         }
 
-        int max = num[0];
-        for (int i = 1; i < num.length; i++) {
-            if (max < num[i]) {
-                max = num[i];
-                sb.append(max);
+        int num = stack.get(0);
+        for (int i = 1; i <= scope; i++) {
+            if (num < stack.get(i)) {
+                sb.append(stack.get(i));
+                stack.remove(stack.get(i));
             }
-
-            if (sb.toString().length() == scope) {
-                System.out.println("scope = " + scope);
-                break;
-            }
-
         }
-
 
         return sb.toString();
     }
 
-
-    public String solution2(String number, int k) {
-        String answer = "";
-
-        ArrayList<String> num = new ArrayList<>();
-        for (int i = 0; i < number.length(); i++) {
-            num.add(String.valueOf(number.charAt(i)));
-        }
-
-
-
-        return answer;
-    }
 
 
 
