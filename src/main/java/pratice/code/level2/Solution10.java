@@ -1,8 +1,6 @@
 package pratice.code.level2;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Stack;
 
 public class Solution10 {
@@ -24,12 +22,8 @@ public class Solution10 {
             stack.add(Integer.valueOf(String.valueOf(number.charAt(i))));
         }
 
-        int num = stack.get(0);
-        for (int i = 1; i <= scope; i++) {
-            if (num < stack.get(i)) {
-                sb.append(stack.get(i));
-                stack.remove(stack.get(i));
-            }
+        for (Integer integer : stack) {
+            System.out.println("integer = " + integer);
         }
 
         return sb.toString();
