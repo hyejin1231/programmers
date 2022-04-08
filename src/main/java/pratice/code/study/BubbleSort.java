@@ -2,7 +2,7 @@ package pratice.code.study;
 
 import java.util.Arrays;
 
-// 버블정렬 
+// 버블정렬
 public class BubbleSort {
     public static void main(String[] args) {
         int[] num = new int[10];

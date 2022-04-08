@@ -16,30 +16,17 @@ public class Solution14 {
 
     // 구명보트
     public int solution(int[] people, int limit) {
-        int answer = 0;
-        Stack<Integer> stack = new Stack();
+       int answer = 0;
+        Arrays.parallelSort(people);
+        int index = 0;
 
-        Arrays.sort(people);
-        for (int person : people) {
-            stack.push(person);
-        }
-
-        int sum = 0;
-        int size = stack.size();
-        for (int i = 0; i < size; i++) {
-            Integer pop = stack.pop();
-            sum += pop;
-
-            if (limit - pop < 40) {
-                answer ++;
-                sum = 0;
-            }
-
-            if (sum >= limit) {
+        for (int i = people.length - 1; i >= index; i--) {
+            if (people[i] + people[index] <= limit) {
                 answer++;
-                sum = 0;
+                index++;
+            }else {
+                answer++;
             }
-
         }
 
         return answer;
