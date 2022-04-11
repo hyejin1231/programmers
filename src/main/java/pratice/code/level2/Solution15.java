@@ -12,7 +12,7 @@ public class Solution15 {
         System.out.println(solution15.solution(land)); // result = 5 + 7 + 4 = 16
     }
 
-
+     //
     // 땅따먹기
     int solution(int[][] land) {
         int answer = 0;
