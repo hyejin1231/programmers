@@ -27,8 +27,6 @@ public class Solution17 {
         return answer;
     }
 
-
-
     public int[] solution2(int brown, int yellow) {
         int[] answer = new int[2];
         ArrayList<Integer> list = new ArrayList<>();
