@@ -10,6 +10,7 @@ public class Solution19 {
         System.out.println(solution19.solution("cdcd")); // result 0
     }
 
+
     // 짝지어 제거하기
     public int solution(String s)
     {
